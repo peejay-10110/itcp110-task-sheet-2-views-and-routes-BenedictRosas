@@ -1,1 +1,10 @@
-{"image":"mcr.microsoft.com/devcontainers/universal:2"}
+{
+    "name": "PHP 8.3 & MySQL",
+    "image": "mcr.microsoft.com/devcontainers/php:1-8.3-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/mysql:1": {
+            "version": "8.0"
+        }
+    },
+    "postCreateCommand": "cd laravel && composer install && cp .env.example .env && php artisan key: generate"
+}
